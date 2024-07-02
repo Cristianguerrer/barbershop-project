@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         listaCitas.appendChild(li);
         
         citaForm.reset();
+        cargarAgenda();
     });
 
     // Gestión de Servicios
@@ -99,4 +100,26 @@ document.addEventListener('DOMContentLoaded', () => {
         
         empleadoForm.reset();
     });
+
+    // Cargar la agenda de citas
+    async function cargarAgenda() {
+        const listaAgenda = document.getElementById('listaAgenda');
+        listaAgenda.innerHTML = '';
+
+        const response = await fetch('http://localhost:5000/api/citas', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        const citas = await response.json();
+
+        citas.forEach(cita => {
+            const li = document.createElement('li');
+            li.textContent = `${cita.nombreCliente} - ${cita.servicio} - ${new Date(cita.fecha).toLocaleString()}`;
+            listaAgenda.appendChild(li);
+        });
+    }
+
+    cargarAgenda();
 });
