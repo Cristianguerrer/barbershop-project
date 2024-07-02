@@ -6,3 +6,4 @@ router.post('/', citaController.createCita);
 router.get('/', citaController.getCitas);
 
 module.exports = router;
+
