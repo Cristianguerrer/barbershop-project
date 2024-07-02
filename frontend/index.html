@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión para Centros de Belleza y Spa</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Sistema de Gestión para Centros de Belleza y Spa</h1>
+        <nav>
+            <ul>
+                <li><a href="#clientes">Clientes</a></li>
+                <li><a href="#citas">Citas</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#empleados">Empleados</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="clientes">
+            <h2>Gestión de Clientes</h2>
+            <form id="clienteForm">
+                <input type="text" id="nombreCliente" placeholder="Nombre del Cliente" required>
+                <input type="email" id="emailCliente" placeholder="Email" required>
+                <button type="submit">Agregar Cliente</button>
+            </form>
+            <ul id="listaClientes"></ul>
+        </section>
+        
+        <section id="citas">
+            <h2>Gestión de Citas</h2>
+            <form id="citaForm">
+                <input type="text" id="nombreClienteCita" placeholder="Nombre del Cliente" required>
+                <input type="text" id="servicioCita" placeholder="Servicio" required>
+                <input type="datetime-local" id="fechaCita" required>
+                <button type="submit">Agregar Cita</button>
+            </form>
+            <ul id="listaCitas"></ul>
+        </section>
+
+        <section id="servicios">
+            <h2>Gestión de Servicios</h2>
+            <form id="servicioForm">
+                <input type="text" id="nombreServicio" placeholder="Nombre del Servicio" required>
+                <input type="number" id="precioServicio" placeholder="Precio" required>
+                <button type="submit">Agregar Servicio</button>
+            </form>
+            <ul id="listaServicios"></ul>
+        </section>
+
+        <section id="empleados">
+            <h2>Gestión de Empleados</h2>
+            <form id="empleadoForm">
+                <input type="text" id="nombreEmpleado" placeholder="Nombre del Empleado" required>
+                <input type="text" id="rolEmpleado" placeholder="Rol" required>
+                <button type="submit">Agregar Empleado</button>
+            </form>
+            <ul id="listaEmpleados"></ul>
+        </section>
+    </main>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
